@@ -9,29 +9,18 @@ import UIKit
 final class ViewController: UIViewController {
 
     @IBOutlet private weak var uiSlider: UISlider!
-    
     @IBOutlet private weak var uiTextField: UITextField!
-    
     @IBOutlet private weak var uiProgressView: UIProgressView!
-    
     @IBOutlet private weak var uiDatePicker: UIDatePicker!
-    
     @IBOutlet private weak var btnSetThisTime: UIButton!
-    
     @IBOutlet private weak var labelTime: UILabel!
-    
     @IBOutlet private weak var uiSwitch: UISwitch!
-    
     @IBOutlet private weak var uiButtonClear: UIButton!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
-    
     @IBAction func sliderValueChaged(_ sender: UISlider) {
         uiProgressView.progress = sender.value
         uiTextField.text = String(format: "%.1f", sender.value)
@@ -54,15 +43,9 @@ final class ViewController: UIViewController {
     
     
     @IBAction func switchAlarm(_ sender: UISwitch) {
-        if sender.isOn {
-            labelTime.backgroundColor = .systemGreen
-        } else {
-            labelTime.backgroundColor = .systemBlue
+        sender.isOn ? (labelTime.backgroundColor = .systemGreen) : (labelTime.backgroundColor = .systemBlue)
         }
         
-    }
-    
-    
     @IBAction func clearButton(_ sender: UIButton) {
         labelTime.text = ""
         labelTime.backgroundColor = .systemBlue
